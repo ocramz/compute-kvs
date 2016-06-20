@@ -11,4 +11,4 @@ help:
 
 
 build:
-  docker build -t ${TAG} .
+	docker build -t ${TAG} .
