@@ -3,7 +3,10 @@ sudo:
   
 language: 
   c 
-  
+
+services:
+  - docker
+
 addons:
 
 before_install:
