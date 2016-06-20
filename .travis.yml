@@ -1,0 +1,14 @@
+sudo: 
+  false
+  
+language: 
+  c 
+  
+addons:
+
+before_install:
+  # build container
+  - make build
+  
+script:
+  
