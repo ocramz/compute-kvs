@@ -17,15 +17,16 @@ RUN apk --update add wget
 WORKDIR /tmp
 
 RUN wget https://releases.hashicorp.com/consul/${CONSUL_VER}/consul_${CONSUL_VER}_web_ui.zip && \
-    mv consul_${CONSUL_VER}_web_ui.zip consul_ui.zip && \
-    unzip consul_ui.zip
+    unzip consul_${CONSUL_VER}_web_ui.zip 
 
+RUN ls -lsA
 
 
 # # consul-template
 RUN wget https://releases.hashicorp.com/consul-template/${CT_VER}/consul-template_${CT_VER}_linux_amd64.zip && \
-    mv consul-template_${CT_VER}_linux_amd64.zip consul_template.zip && \
-    unzip consul-template_${CT_VER}_linux_amd64 && \
+    unzip consul-template_${CT_VER}_linux_amd64.zip
+    
+RUN mv consul-template /usr/local/bin/consul-template && \
     chmod +x /usr/local/bin/consul-template
 
 
@@ -36,5 +37,5 @@ RUN curl -fsL https://github.com/CiscoCloud/consul-cli/releases/download/v${CONS
 
 
 
-# ENTRYPOINT ["/bin/consul", "agent", "-config-dir=/config", "-ui"]
-ENTRYPOINT ["/bin/consul", "server", "-config-dir=/config"]
+ENTRYPOINT ["/bin/consul", "agent", "-config-dir=/config", "-ui-dir=/tmp"]
+# ENTRYPOINT ["/bin/consul", "server", "-config-dir=/config"]
