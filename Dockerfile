@@ -27,7 +27,8 @@ RUN echo "${CONSUL_SHA256}  /tmp/consul.zip" > /tmp/consul.sha256 \
 # # consul-template
 
 # consul-template
-RUN curl -Lsf https://releases.hashicorp.com/consul-template/${CT_VER}/consul-template_${CT_VER}_linux_amd64.zip | tar xf - -C /usr/local/bin/ && \
+RUN curl -Lsf https://releases.hashicorp.com/consul-template/${CT_VER}/consul-template_${CT_VER}_linux_amd64.zip && \
+    unzip consul-template_${CT_VER}_linux_amd64.zip -d /usr/local/bin/ && \
     chmod +x /usr/local/bin/consul-template
 
 
