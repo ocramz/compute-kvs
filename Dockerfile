@@ -62,6 +62,9 @@ RUN curl -fsL https://github.com/CiscoCloud/consul-cli/releases/download/v${CONS
 
 
 # Consul agent configuration in config/agent.json
+
+ADD /config /config
+
 ENTRYPOINT ["/bin/consul", "agent", "-config-dir=/config", "-ui-dir=/tmp"]
 
 # ENTRYPOINT ["/bin/consul", "agent", "-server", "-config-dir=/config"]
