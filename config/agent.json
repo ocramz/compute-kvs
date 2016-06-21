@@ -1,9 +1,31 @@
+// {
+// 	"client_addr": "0.0.0.0",
+// 	"data_dir": "/data",
+// 	"leave_on_terminate": true,
+// 	"dns_config": {
+// 		"allow_stale": true,
+// 		"max_stale": "1s"
+// 	}
+// }
+
+
+
 {
-	"client_addr": "0.0.0.0",
-	"data_dir": "/data",
-	"leave_on_terminate": true,
-	"dns_config": {
-		"allow_stale": true,
-		"max_stale": "1s"
-	}
+    "bootstrap": false,
+    "server": false,
+    "datacenter": "dc1",
+    "data_dir": "/var/consul",
+    "log_level": "INFO",
+    "enable_syslog": false,
+    "ui_dir": "/opt/consul-web-ui/",
+    "client_addr": "0.0.0.0",
+    "start_join": [],
+    "advertise_addr": "",
+    "advertise_addr_wan": "",
+    "node_name": "hostname",
+    "recursor": "8.8.8.8",
+    "retry_max_wan": 3,
+    "ports": {
+        "dns": 53
+    }
 }
