@@ -17,14 +17,16 @@ RUN apk --update add wget
 WORKDIR /tmp
 
 RUN wget https://releases.hashicorp.com/consul/${CONSUL_VER}/consul_${CONSUL_VER}_web_ui.zip && \
-    unzip consul_${CONSUL_VER}_web_ui.zip 
+    unzip consul_${CONSUL_VER}_web_ui.zip && \
+    rm consul_${CONSUL_VER}_web_ui.zip
 
 RUN ls -lsA
 
 
 # # consul-template
 RUN wget https://releases.hashicorp.com/consul-template/${CT_VER}/consul-template_${CT_VER}_linux_amd64.zip && \
-    unzip consul-template_${CT_VER}_linux_amd64.zip
+    unzip consul-template_${CT_VER}_linux_amd64.zip && \
+    rm consul-template_${CT_VER}_linux_amd64.zip
     
 RUN mv consul-template /usr/local/bin/consul-template && \
     chmod +x /usr/local/bin/consul-template

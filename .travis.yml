@@ -14,4 +14,4 @@ before_install:
   - make build
   
 script:
-  - pwd
+  - docker images
