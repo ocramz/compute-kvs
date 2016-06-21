@@ -66,3 +66,10 @@ ENTRYPOINT ["/bin/consul", "agent", "-config-dir=/config", "-ui-dir=/tmp"]
 
 # ENTRYPOINT ["/bin/consul", "agent", "-server", "-config-dir=/config"]
 # ENTRYPOINT ["/bin/bash"]
+
+
+
+# # # clean temp data
+RUN sudo apt-get clean && \
+    apt-get purge && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
