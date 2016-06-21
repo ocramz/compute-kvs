@@ -46,7 +46,8 @@ RUN mv consul-template /usr/local/bin/consul-template && \
 # # consul-cli
 RUN curl -fsL https://github.com/CiscoCloud/consul-cli/releases/download/v${CONSUL_CLI_VER}/consul-cli_${CONSUL_CLI_VER}_linux_amd64.tar.gz | tar xzf - -C /tmp/ && \
     mv /tmp/consul-cli_${CONSUL_CLI_VER}_linux_amd64/consul-cli /usr/local/bin/ && \
-    rm -rf /tmp/consul-cli_${CONSUL_CLI_VER}_linux_amd64
+    rm -rf /tmp/consul-cli_${CONSUL_CLI_VER}_linux_amd64 && \
+    rm consul-cli_${CONSUL_CLI_VER}_linux_amd64.tar.gz
 
 
 # Consul agent configuration in config/agent.json
