@@ -20,7 +20,7 @@ RUN mkdir -p ${CONSUL_DATA_DIR}
 
 
 RUN apt-get update && \
-    apt-get install -y curl wget ca-certificates
+    apt-get install -y curl wget unzip tar ca-certificates
 
 ADD https://releases.hashicorp.com/consul/${CONSUL_VER}/consul_${CONSUL_VER}_linux_amd64.zip /tmp/consul.zip
 RUN echo "${CONSUL_SHA256}  /tmp/consul.zip" > /tmp/consul.sha256 \
