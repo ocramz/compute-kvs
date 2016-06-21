@@ -19,7 +19,7 @@ RUN mkdir -p ${CONSUL_WEBUI_DIR}
 RUN mkdir -p ${CONSUL_DATA_DIR}
 
 
-RUN apt-get upgrade && \
+RUN apt-get update && \
     apt-get install -y curl wget ca-certificates
 
 ADD https://releases.hashicorp.com/consul/${CONSUL_VER}/consul_${CONSUL_VER}_linux_amd64.zip /tmp/consul.zip
